@@ -1,0 +1,694 @@
+.deudasDashboard {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.titleSection {
+  h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    color: #1f2937;
+  }
+  
+  p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 16px;
+  }
+}
+
+.periodSelector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.periodSelect {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+  cursor: pointer;
+  
+  &:focus {
+    outline: none;
+    border-color: #3b82f6;
+  }
+}
+
+.dashboardContent {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  align-items: start;
+  
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.chartsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.metricsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+// Deuda Summary
+.deudaSummary {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 30px;
+    padding: 24px;
+  }
+}
+
+.metricaPrincipal {
+  flex: 1;
+}
+
+.deudaTotal {
+  text-align: center;
+  
+  @media (max-width: 768px) {
+    text-align: left;
+  }
+}
+
+.deudaValor {
+  font-size: 42px;
+  font-weight: bold;
+  color: #dc2626;
+  line-height: 1;
+  margin-bottom: 8px;
+  
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 32px;
+  }
+}
+
+.deudaLabel {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 4px;
+  
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
+}
+
+.deudaSubtext {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.desgloseDeuda {
+  display: flex;
+  gap: 30px;
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+}
+
+.desgloseItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 8px;
+  min-width: 200px;
+  
+  @media (max-width: 480px) {
+    min-width: auto;
+    justify-content: space-between;
+  }
+}
+
+.desgloseIcon {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.desgloseContent {
+  flex: 1;
+}
+
+.desgloseLabel {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.desgloseValor {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
+}
+// Gráficas y tablas
+.chart-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  
+  canvas {
+    max-height: 300px;
+    margin-bottom: 20px;
+  }
+}
+
+// Responsive para gráficas
+@media (max-width: 768px) {
+  .chart-container {
+    padding: 16px;
+    
+    canvas {
+      max-height: 250px;
+    }
+  }
+  
+  .distribution-table {
+    table {
+      font-size: 13px;
+      
+      th, td {
+        padding: 8px;
+      }
+    }
+  }
+}
+
+// Métricas de Deuda
+.metricasDeuda {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.metricaCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-left: 4px solid #3b82f6;
+}
+
+.metricaHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.metricaIcon {
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  border-radius: 8px;
+}
+
+.metricaTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metricaContent {
+  .metricaValor {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1f2937;
+    line-height: 1;
+    margin-bottom: 4px;
+    
+    @media (max-width: 480px) {
+      font-size: 20px;
+    }
+  }
+  
+  .metricaDesc {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 500;
+  }
+}
+
+// Tarjeta de información adicional
+.infoCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-left: 4px solid #10b981;
+  
+  h4 {
+    margin: 0 0 16px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+  }
+}
+
+.infoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f3f4f6;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+  
+  span {
+    font-size: 14px;
+    color: #6b7280;
+  }
+  
+  strong {
+    font-size: 14px;
+    color: #1f2937;
+    font-weight: 600;
+  }
+}
+
+// Responsive
+@media (max-width: 1024px) {
+  .metricasDeuda {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  .infoCard {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .metricasDeuda {
+    grid-template-columns: 1fr;
+  }
+  
+  .metricaCard {
+    padding: 16px;
+  }
+  
+  .infoCard {
+    padding: 16px;
+  }
+}
+
+// Gráfica de evolución
+.chart-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border-left: 4px solid #ef4444;
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+  span {
+    font-size: 14px;
+    color: #6b7280;
+  }
+  
+  strong {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2937;
+  }
+}
+
+.trend-up {
+  color: #ef4444 !important;
+}
+
+.trend-down {
+  color: #10b981 !important;
+}
+
+// Contenedor de gráfica con card
+.chartContainer {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  
+  canvas {
+    max-height: 300px;
+    margin-bottom: 20px;
+  }
+}
+
+// Card de tendencia
+.trendCard {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 4px solid #3b82f6;
+}
+
+.trendHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.trendIcon {
+  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.trendTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.trendContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.trendItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  span {
+    font-size: 13px;
+    color: #6b7280;
+  }
+  
+  strong {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1f2937;
+  }
+}
+
+.trendUp {
+  color: #ef4444 !important;
+}
+
+.trendDown {
+  color: #10b981 !important;
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .chartContainer {
+    padding: 16px;
+    
+    canvas {
+      max-height: 250px;
+    }
+  }
+  
+  .trendCard {
+    padding: 12px;
+  }
+}
+
+// Gráfica de área
+.chart-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  position: relative;
+  
+  canvas {
+    max-height: 300px;
+    margin-bottom: 20px;
+  }
+}
+
+// Tarjeta informativa de la gráfica
+.chart-info-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 4px solid #3b82f6;
+}
+
+.info-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.trend-indicator {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  &.up {
+    color: #ef4444;
+  }
+  
+  &.down {
+    color: #10b981;
+  }
+}
+
+.info-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  span {
+    font-size: 13px;
+    color: #6b7280;
+  }
+  
+  strong {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1f2937;
+    
+    &.up {
+      color: #ef4444;
+    }
+    
+    &.down {
+      color: #10b981;
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .chart-container {
+    padding: 16px;
+    
+    canvas {
+      max-height: 250px;
+    }
+  }
+  
+  .chart-info-card {
+    padding: 12px;
+  }
+}
+// Estilos existentes para metricasDeuda...
+
+.trendDetail {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.trendPeriod {
+  font-size: 11px;
+  color: #9ca3af;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.trendUp {
+  color: #ef4444 !important;
+}
+
+.trendDown {
+  color: #10b981 !important;
+}
+
+// Asegurar que los colores de tendencia se apliquen
+.metricaContent {
+  .metricaValor.trendUp {
+    color: #ef4444;
+  }
+  
+  .metricaValor.trendDown {
+    color: #10b981;
+  }
+  
+  .trendDetail {
+    &.trendUp {
+      color: #ef4444;
+    }
+    
+    &.trendDown {
+      color: #10b981;
+    }
+  }
+}
+// Estilos para íconos FontAwesome
+.metricaIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(59, 130, 246, 0.1);
+  
+  svg {
+    font-size: 18px;
+    color: #3b82f6;
+  }
+}
+
+.iconSuccess {
+  color: #10b981 !important;
+}
+
+.iconWarning {
+  color: #f59e0b !important;
+}
+
+.iconDanger {
+  color: #ef4444 !important;
+}
+
+.infoHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  
+  .infoIcon {
+    color: #6b7280;
+    font-size: 16px;
+  }
+  
+  h4 {
+    margin: 0;
+    color: #374151;
+  }
+}
+
+// Estilos existentes para tendencias
+.trendUp {
+  color: #10b981;
+}
+
+.trendDown {
+  color: #ef4444;
+}

@@ -1,0 +1,463 @@
+.topBar {
+  background: linear-gradient(135deg, #0D47F9 0%, #2B77F9 100%);
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.topBarMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  height: 70px;
+}
+
+// Left Section - Logo
+.leftSection {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .subtitle {
+    font-size: 0.75rem;
+    opacity: 0.9;
+    margin-top: 2px;
+  }
+}
+
+// Desktop Navigation
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+  }
+}
+
+.navIcon {
+  width: 16px;
+  height: 16px;
+}
+
+// Right Section
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+// User Container - ESTILOS PRINCIPALES
+.userContainer {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 200px;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.userContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.userName {
+  font-weight: 600;
+  color: white;
+  font-size: 14px;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userRole {
+  color: white;
+  font-size: 12px;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  display: inline-block;
+  width: fit-content;
+}
+
+.userControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.userAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.chevron {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.chevronRotated {
+  transform: rotate(180deg);
+}
+
+// Botón de menú hamburguesa MÓVIL
+.mobileMenuIcon {
+  display: none;
+  color: white;
+  margin-left: 8px;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  
+  @media (max-width: 768px) {
+    display: flex;
+  }
+}
+
+// Dropdown Menu
+.userDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  min-width: 240px;
+  z-index: 1000;
+  overflow: hidden;
+  border: 1px solid #e1e5e9;
+}
+
+.dropdownHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-bottom: 1px solid #dee2e6;
+}
+
+.dropdownAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.dropdownUserInfo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.dropdownUserName {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 15px;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdownUserRole {
+  color: #718096;
+  font-size: 13px;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  display: inline-block;
+  width: fit-content;
+  margin: 4px 0;
+}
+
+.dropdownUserEmail {
+  font-size: 12px;
+  color: #718096;
+  margin-top: 2px;
+}
+
+.dropdownUserMunicipio {
+  font-size: 12px;
+  color: #718096;
+  font-style: italic;
+}
+
+.dropdownDivider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #e2e8f0 50%, transparent 100%);
+  margin: 8px 0;
+}
+
+.dropdownItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #f8f9fa;
+  }
+}
+
+.dropdownIcon {
+  width: 16px;
+  color: #666;
+}
+
+// Menú Mobile
+.mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+
+  &:hover {
+    background-color: #f8f9fa;
+  }
+}
+
+.mobileNavIcon {
+  width: 18px;
+  color: #666;
+}
+
+// Información del usuario en menú móvil
+.mobileUserInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  margin: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.userEmail {
+  font-size: 12px;
+  color: #718096;
+  margin-top: 2px;
+}
+
+.userMunicipio {
+  font-size: 12px;
+  color: #718096;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+// Logout en Mobile
+.mobileLogout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: none;
+  border: none;
+  color: #e53e3e;
+  cursor: pointer;
+  width: 100%;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 8px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  font-size: 16px;
+
+  &:hover {
+    background-color: #fed7d7;
+  }
+}
+
+// Nuevos estilos agregados
+.mobileDivider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #e2e8f0 50%, transparent 100%);
+  margin: 8px 16px;
+}
+
+// ================= RESPONSIVE =================
+@media (max-width: 768px) {
+  .topBarMain {
+    padding: 0 0.75rem;
+    height: 60px;
+  }
+
+  .logo {
+    h2 {
+      font-size: 1.1rem;
+    }
+    
+    .subtitle {
+      font-size: 0.7rem;
+    }
+  }
+
+  .userContainer {
+    min-width: auto;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+
+  .userName {
+    font-size: 13px;
+  }
+
+  .userRole {
+    font-size: 11px;
+    padding: 1px 6px;
+  }
+
+  .userControls {
+    display: none; // Ocultar chevron en móvil
+  }
+
+  .desktopNav {
+    display: none;
+  }
+.mobileMenuIcon {
+    display: flex; // Mostrar ícono de hamburguesa en móvil
+  }
+  .mobileMenuButton {
+    display: flex; // Mostrar botón hamburguesa en móvil
+  }
+
+  .userDropdown {
+   display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobileMenuButton {
+    display: none !important;
+  }
+  
+  .mobileMenu {
+    display: none;
+  }
+}
+
+// Estilos para cuando el menú móvil está abierto
+.mobileMenuOpen {
+  background: rgba(0, 0, 0, 0.5);
+}

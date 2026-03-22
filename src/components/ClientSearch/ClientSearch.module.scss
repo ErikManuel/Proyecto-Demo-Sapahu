@@ -1,0 +1,1146 @@
+.clientSearch {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+}
+
+/* Sección de Búsqueda */
+.searchSection {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 2rem;
+  }
+}
+
+.searchBox {
+  display: flex;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.searchInput {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+
+  &:focus {
+    outline: none;
+    border-color: #0D47F9;
+    box-shadow: 0 0 0 3px rgba(13, 71, 249, 0.1);
+  }
+
+  &:disabled {
+    background: #f8f9fa;
+    cursor: not-allowed;
+  }
+}
+
+.searchButton {
+  background: linear-gradient(90deg, #0D47F9 0%, #2B77F9 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 140px;
+  justify-content: center;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 71, 249, 0.3);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.errorMessage {
+  background: #fee;
+  color: #c53030;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #fed7d7;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+/* Contenedor de Resultados */
+.resultsContainer {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.resultsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Columna Izquierda - Información del Cliente */
+.clientInfo {
+  padding: 2rem;
+  border-right: 1px solid #e9ecef;
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+}
+
+.clientHeader {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f8f9fa;
+
+  h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  .contract {
+    color: #7f8c8d;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: #e9ecef;
+  }
+
+  .infoIcon {
+    color: #0D47F9;
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+    width: 20px;
+  }
+
+  strong {
+    display: block;
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+  }
+
+  p {
+    color: #5a6c7d;
+    margin: 0;
+    line-height: 1.4;
+    font-size: 0.9rem;
+  }
+}
+
+/* Columna Derecha - Mapa y Estado de Cuenta */
+.clientActions {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+}
+
+.mapSection {
+  h3 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+}
+
+.miniMap {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  height: 200px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.mapPlaceholder {
+  text-align: center;
+  color: #6c757d;
+
+  svg {
+    color: #0D47F9;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  small {
+    font-size: 0.75rem;
+    opacity: 0.7;
+  }
+}
+
+.mapButton {
+  background: transparent;
+  color: #0D47F9;
+  border: 2px solid #0D47F9;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+
+  &:hover {
+    background: #0D47F9;
+    color: white;
+  }
+}
+
+/* Estado de Cuenta */
+.accountStatus {
+  h3 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+}
+
+.statusCard {
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &.current {
+    background: #f0f9f0;
+    border: 2px solid #4CAF50;
+  }
+
+  &.pending {
+    background: #fef0f0;
+    border: 2px solid #e74c3c;
+  }
+}
+
+.statusHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+
+  .statusIcon {
+    font-size: 1.3rem;
+  }
+
+  .current & {
+    color: #4CAF50;
+  }
+
+  .pending & {
+    color: #e74c3c;
+  }
+}
+
+.debtAmount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+
+  .current & {
+    color: #4CAF50;
+  }
+
+  .pending & {
+    color: #e74c3c;
+  }
+}
+
+.payButton {
+  background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+  }
+}
+
+/* Estados de carga */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Responsive adicional */
+@media (max-width: 480px) {
+  .searchSection {
+    padding: 1.5rem;
+    
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  .clientHeader h2 {
+    font-size: 1.5rem;
+  }
+
+  .infoItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .infoIcon {
+    align-self: center;
+  }
+}
+/* Modal de Pago */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.paymentModal {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+
+  h3 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.4rem;
+  }
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #6c757d;
+  line-height: 1;
+
+  &:hover {
+    color: #dc3545;
+  }
+}
+
+.modalContent {
+  padding: 1.5rem;
+}
+
+.paymentInfo {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+
+  p {
+    margin: 0.5rem 0;
+    color: #495057;
+  }
+}
+
+.paymentForm {
+  .formGroup {
+    margin-bottom: 1.5rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #495057;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid #e9ecef;
+      border-radius: 6px;
+      font-size: 1rem;
+
+      &:focus {
+        outline: none;
+        border-color: #0D47F9;
+      }
+    }
+  }
+}
+
+.paymentMethods {
+  margin-bottom: 1.5rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: #495057;
+  }
+}
+
+.methodOptions {
+  display: grid;
+  //grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.methodOption {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: #0D47F9;
+    background: #f8f9fa;
+  }
+
+  input[type="radio"] {
+    margin: 0;
+  }
+
+  svg {
+    color: #0D47F9;
+    font-size: 1.2rem;
+  }
+
+  span {
+    font-weight: 500;
+  }
+
+  input:checked + svg + span {
+    font-weight: 600;
+  }
+
+  input:checked {
+    & ~ svg {
+      color: #0D47F9;
+    }
+  }
+}
+
+.modalActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  button {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.cancelButton {
+  background: #6c757d;
+  color: white;
+
+  &:hover:not(:disabled) {
+    background: #5a6268;
+  }
+}
+
+.confirmButton {
+  background: linear-gradient(90deg, #28a745 0%, #20c997 100%);
+  color: white;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+  }
+}
+
+.processing {
+  text-align: center;
+  padding: 2rem;
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f4f6;
+    border-left: 4px solid #0D47F9;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+  }
+
+  p {
+    color: #6c757d;
+    margin: 0;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Mejoras para los botones existentes */
+.payButton, .mapButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Responsive para el modal */
+@media (max-width: 768px) {
+  .paymentModal {
+    margin: 1rem;
+  }
+
+  .modalActions {
+    flex-direction: column;
+  }
+}
+/* Lista de Resultados Múltiples */
+.resultsListContainer {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.resultsListHeader {
+  padding: 1.5rem;
+  background: linear-gradient(90deg, #0D47F9 0%, #2B77F9 100%);
+  color: white;
+  text-align: center;
+
+  h3 {
+    margin: 0.5rem 0 0.25rem 0;
+    font-size: 1.3rem;
+  }
+
+  p {
+    margin: 0;
+    opacity: 0.9;
+  }
+
+  svg {
+    font-size: 2rem;
+  }
+}
+
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}
+
+.clientCard {
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+
+  &:hover {
+    border-color: #0D47F9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(13, 71, 249, 0.1);
+  }
+}
+
+.clientCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f1f3f4;
+
+  h4 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.2rem;
+  }
+
+  .contract {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+  }
+
+  .clientIcon {
+    color: #0D47F9;
+    font-size: 1.5rem;
+  }
+}
+
+.clientCardInfo {
+  p {
+    margin: 0.5rem 0;
+    color: #5a6c7d;
+    font-size: 0.9rem;
+
+    strong {
+      color: #2c3e50;
+    }
+  }
+}
+
+.debtPending {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.debtCurrent {
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.selectButton {
+  width: 100%;
+  background: linear-gradient(90deg, #0D47F9 0%, #2B77F9 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(13, 71, 249, 0.3);
+  }
+}
+
+/* Header para resultados individuales */
+.resultsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+.backButton {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+
+  &:hover {
+    background: #5a6268;
+  }
+}
+
+/* Ajustes para el grid de resultados individuales */
+.resultsContainer .resultsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===== ESTILOS PARA GESTIÓN DE UBICACIÓN ===== */
+
+/* Indicadores de ubicación en tarjetas */
+.locationDefined {
+  color: #10b981;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.locationUndefined {
+  color: #ef4444;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+/* Sin coordenadas */
+.noCoordinates {
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Botones de mapa mejorados */
+.mapButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 15px;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.editLocationButton {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+/* Estados del mapa */
+.mapIconActive {
+  color: #ef4444;
+}
+
+.mapIconInactive {
+  color: #9ca3af;
+}
+
+.mapPlaceholderEmpty {
+  text-align: center;
+  color: #6c757d;
+  padding: 2rem;
+
+  p {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  small {
+    font-size: 0.75rem;
+    opacity: 0.7;
+  }
+}
+
+/* ===== MODAL DE EDICIÓN DE UBICACIÓN ===== */
+
+.locationInfo {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+
+  p {
+    margin: 0.25rem 0;
+    color: #495057;
+  }
+}
+
+/* Mapa simple interactivo */
+.simpleMap {
+  margin-bottom: 1.5rem;
+}
+
+.mapContainer {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.mapPlaceholderInteractive {
+  text-align: center;
+  color: #495057;
+  padding: 1rem;
+
+  .mapIcon {
+    color: #0D47F9;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .coordinatesDisplay {
+    background: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+  }
+
+  small {
+    font-size: 0.75rem;
+    opacity: 0.7;
+  }
+}
+
+/* Formulario de coordenadas */
+.locationForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.coordinateInputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.coordinateGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    font-weight: 600;
+    color: #495057;
+    font-size: 0.9rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Courier New', monospace;
+
+    &:focus {
+      outline: none;
+      border-color: #0D47F9;
+    }
+
+    &:disabled {
+      background: #f8f9fa;
+      cursor: not-allowed;
+    }
+  }
+}
+
+/* Botón de obtener ubicación */
+.getLocationButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #0D47F9, #2B77F9);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(13, 71, 249, 0.3);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+/* Vista previa de coordenadas */
+.coordinatesPreview {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: #e3f2fd;
+  border: 1px solid #90caf9;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #1565c0;
+
+  svg {
+    color: #0D47F9;
+  }
+}
+
+/* ===== MEJORAS RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .mapButtons {
+    grid-template-columns: 1fr;
+  }
+
+  .coordinateInputs {
+    grid-template-columns: 1fr;
+  }
+
+  .simpleMap .mapContainer {
+    height: 150px;
+  }
+}
+
+/* Estados de carga para geolocalización */
+.getLocationButton:disabled {
+  background: #6c757d;
+}
+
+/* Validación visual de coordenadas */
+input:invalid {
+  border-color: #ef4444;
+}
+
+input:valid {
+  border-color: #10b981;
+}
+
+/* Mejoras para el modal de ubicación */
+.locationModal {
+  max-width: 600px;
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 380px) {
+  .mapButtons {
+    gap: 8px;
+  }
+
+  .editLocationButton,
+  .mapButton {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .simpleMap .mapContainer {
+    height: 120px;
+  }
+}
+
+/* En ClientSearch.module.scss */
+.amountInput {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  
+  &:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+}
+
+.amountHint {
+  color: #6c757d;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+.partialPaymentInfo {
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+  padding: 12px;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+  svg {
+    color: #856404;
+  }
+  
+  span {
+    color: #856404;
+    font-size: 14px;
+  }
+}
+
+.fullPaymentInfo {
+  background-color: #d1edff;
+  border: 1px solid #b3d9ff;
+  border-radius: 6px;
+  padding: 12px;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+  svg {
+    color: #0066cc;
+  }
+  
+  span {
+    color: #0066cc;
+    font-size: 14px;
+  }
+}
