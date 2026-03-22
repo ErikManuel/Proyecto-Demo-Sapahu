@@ -1,39 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💼 Freelance Project – Sapahu Demo
 
-## Getting Started
+## 🧾 Overview
 
-First, run the development server:
+This project is based on a real-world freelance experience, where I developed a web solution tailored to client requirements.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+It demonstrates my ability to translate business needs into functional, user-friendly interfaces.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Live Demo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+👉 https://your-demo-link.com *(update this)*
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## ⚙️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* HTML
+* CSS / SCSS
+* JavaScript
+* PHP *(if applicable)*
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## ✨ Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* 🎯 Custom UI based on client requirements
+* 📱 Responsive design
+* ⚡ Optimized performance
+* 🧩 Modular structure
+* 🌐 Real-world use case
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
 
-# sapahu
-proyecto de cobranza de sapahu
+## 🧠 Key Highlights
+
+* Real client-based development
+* Requirement analysis and implementation
+* Clean and structured code
+* Focus on usability and accessibility
+
+---
+
+## 📸 Screenshots
+
+*(Add real screenshots, esto es MUY importante aquí)*
+
+---
+
+## 🧠 What I Learned
+
+* Working with real client requirements
+* Adapting to constraints and feedback
+* Delivering production-ready solutions
+* Communication and iteration
+
+---
+
+## 📫 Contact
+
+* GitHub: https://github.com/ErikManuel
